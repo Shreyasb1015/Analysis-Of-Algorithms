@@ -2,6 +2,7 @@
 #include<iostream>
 using namespace std;
 
+// Creating a function to calculate sum of n numbers
 int sum(int n){
 
     if(n==0){
