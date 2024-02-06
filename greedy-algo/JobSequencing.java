@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 
 public class JobSequencing {
@@ -24,17 +22,13 @@ public class JobSequencing {
         
         int n = arr.size();
        
-        
-        Collections.sort(arr,
+             Collections.sort(arr,
                          (a, b) -> b.profit - a.profit);
  
-      
         boolean result[] = new boolean[t];
- 
-        
         char job[] = new char[t];
- 
-        
+        int totalProfit = 0;
+
         for (int i = 0; i < n; i++) {
             
             for (int j = Math.min(t - 1, arr.get(i).deadline - 1); j >= 0; j--) {
@@ -42,15 +36,16 @@ public class JobSequencing {
                 if (result[j] == false) {
                     result[j] = true;
                     job[j] = arr.get(i).id;
+                    totalProfit += arr.get(i).profit;
                     break;
                 }
             }
         }
- 
-        
         for (char jb : job)
             System.out.print(jb + " ");
         System.out.println();
+        System.out.println("Total profit: " + totalProfit);
+
     }
  
     
@@ -79,9 +74,7 @@ public class JobSequencing {
 
         JobSequencing job = new JobSequencing();
 
-        
-        job.printJobScheduling(arr, n);
-        scanner.close();
+           job.printJobScheduling(arr, n);
+           scanner.close();
     }
 }
-
