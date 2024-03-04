@@ -63,7 +63,7 @@ class LCS{
         int q = str2.length();  
           
         LCS = findLengthOfLCS(str1, str2, p, q);  
-          
+        //prinitng both sequences and LCS
         System.out.print("Sequence1: " + str1 + "\nSequence2: " + str2);  
         System.out.println("\nLCS: "+LCS);  
           
